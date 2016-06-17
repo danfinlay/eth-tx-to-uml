@@ -45,7 +45,7 @@ module.exports = function(transaction) {
 
   var edgeTally = generateEdgeTally(nodes, edges)
 
-  result += edgeTally.map(tally => `[${tally.from}]${tally.ethStr()}:=>[${tally.toAddress}]\n`)
+  result += edgeTally.map(tally => `[${tally.from}]${tally.ethStr()}->${tally.txStr()}[${tally.toAddress}]\n`)
 
   return result
 }
@@ -81,8 +81,10 @@ function generateEdgeTally (nodes, edges) {
         totalValue: new BN(edge.value, 16),
         calls: [i],
         ethStr: function() {
-          console.log(this.totalValue.toString(10))
-          return `${formatBalance(this.totalValue.toString(10, 18), 2)} over ${this.calls.length} txs`
+          return formatBalance(this.totalValue.toString(10, 18), 2)
+        },
+        txStr: function() {
+          return `${this.calls.length} txs`
         },
       }
       result.push(tally)
