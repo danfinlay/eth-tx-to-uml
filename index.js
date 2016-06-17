@@ -40,7 +40,8 @@ module.exports = function(transaction) {
   }
   edges = transaction.calls
 
-  var result = nodes.map(node => `[${node.address}]\n`)
+  var result = nodes.map(node => `[${node.address}]`).join('\n')
+  result += '\n'
 
   var edgeTally = generateEdgeTally(nodes, edges)
 

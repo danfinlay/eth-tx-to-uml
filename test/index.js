@@ -28,5 +28,7 @@ test('tally output', function(t) {
   const output = umlGen(input)
 
   console.dir(output)
+  console.log('// HERE IT GOES')
+  output.split('\n').map(line => console.log(line))
 
 })
