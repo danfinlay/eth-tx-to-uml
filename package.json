@@ -1,5 +1,5 @@
 {
-  "name": "dao-attack-analyzer",
+  "name": "eth-tx-to-uml",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
