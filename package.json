@@ -1,0 +1,17 @@
+{
+  "name": "dao-attack-analyzer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-util": "^4.4.1"
+  },
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
+}
